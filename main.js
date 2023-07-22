@@ -24,7 +24,7 @@ selectedDiv.forEach(div=>{
 const gameLogic=function(pick1,pick2){
   if(pick1 == 1 && pick2== 3 || pick1==2 && pick2==1 || pick1==3 && pick2==2){
     scoreUser++;
-    gameStatus='player win';
+    gameStatus='You win';
     scoreWriter();
     if(scoreUser==5){
       winner="User";
@@ -40,7 +40,7 @@ const gameLogic=function(pick1,pick2){
    gameStatus='Pc win!';
     scoreWriter();
     if(scoreAi==5){
-      winner="AI";
+      winner="PC";
       endGame();
     }
   }
@@ -69,7 +69,7 @@ const endGame= function(){
   
   const modal = document.querySelector('.modal');
   modal.classList.toggle('hidden');
-  document.querySelector('#winner').innerHTML=`<p>${winner} has win the game!!!</p>
+  document.querySelector('#winner').innerHTML=`<p>${winner} has win the game!!!</p><br>
 <p>You:${scoreUser} vs PC:${scoreAi}</p>`;
 }
 
